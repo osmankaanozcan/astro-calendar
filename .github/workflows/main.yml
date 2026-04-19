@@ -1,0 +1,36 @@
+name: Astro-Calendar Otopilot
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch: 
+
+jobs:
+  calistir_ve_kaydet:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write 
+
+    steps:
+    - name: Depoyu Klonla
+      uses: actions/checkout@v3
+
+    - name: Python'u Kur
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Kütüphaneleri Yükle
+      run: pip install -r test.txt
+
+    - name: Kodu çalıştır
+      run: python veriler.py
+
+    - name: Geri döndür (manyak.db) Depoya Geri Yükle (Auto-Commit)
+      run: |
+        git config --global user.name "Astro-Bot"
+        git config --global user.email "bot@astro-sync.local"
+        git add manyak.db
+        git diff --quiet && git diff --staged --quiet || git commit -m "Veritabanı güncellendi (Otomatik)"
+        git push
