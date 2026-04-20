@@ -36,7 +36,7 @@ def zaman_ayari(utc_ayari):
     ayarlanmis_zaman = utc_ayari.replace("Z", "+00:00")
     zaman_obj = datetime.fromisoformat(ayarlanmis_zaman)
     ist_zaman = zaman_obj.astimezone(pytz.timezone("Europe/Istanbul"))
-    ekran_t = ist_zaman.strftime("%H:%M | %d-%m-%Y UTC")
+    ekran_t = ist_zaman.strftime("%H:%M | %d-%m-%Y")
     iso_t = ist_zaman.isoformat()
 
     return ekran_t, iso_t
