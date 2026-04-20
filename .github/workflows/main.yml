@@ -2,7 +2,7 @@ name: Astro-Calendar Otopilot
 
 on:
   schedule:
-    - cron: '0 3 * * *'
+    - cron: '0 17 * * *'
   workflow_dispatch: 
 
 jobs:
@@ -31,6 +31,6 @@ jobs:
       run: |
         git config --global user.name "Astro-Bot"
         git config --global user.email "bot@astro-sync.local"
-        git add manyak.db
-        git diff --quiet && git diff --staged --quiet || git commit -m "Veritabanı güncellendi (Otomatik)"
+        git add .
+        git diff --staged --quiet || git commit -m "Otomatik Güncelleme: Veritabanı ve Token"
         git push
