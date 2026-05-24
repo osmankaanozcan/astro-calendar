@@ -8,6 +8,14 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
+if 'G_CREDENTIALS' in os.environ:
+    with open('../../alistirmalar/credentials.json', 'w') as f:
+        f.write(os.environ.get('G_CREDENTIALS'))
+
+if 'G_TOKEN' in os.environ:
+    with open('../../alistirmalar/tkn.json', 'w') as f:
+        f.write(os.environ.get('G_TOKEN'))
+
 dp_name = 'manyak.db'
 auth = ['https://www.googleapis.com/auth/calendar']
 
@@ -43,15 +51,15 @@ def zaman_ayari(utc_ayari):
 
 def google_baglan():
     creds = None
-    if os.path.exists('tkn.json'):
-        creds = Credentials.from_authorized_user_file('tkn.json', auth)
+    if os.path.exists('../../alistirmalar/tkn.json'):
+        creds = Credentials.from_authorized_user_file('../../alistirmalar/tkn.json', auth)
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', auth)
+            flow = InstalledAppFlow.from_client_secrets_file('../../alistirmalar/credentials.json', auth)
             creds = flow.run_local_server(port=0)
-        with open('tkn.json', 'w') as token:
+        with open('../../alistirmalar/tkn.json', 'w') as token:
             token.write(creds.to_json())
     return build('calendar', 'v3', credentials=creds)
 
@@ -138,3 +146,6 @@ def takvim():
 
 kota()
 takvim()
+
+
+
