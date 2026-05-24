@@ -9,11 +9,11 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
 if 'G_CREDENTIALS' in os.environ:
-    with open('../../alistirmalar/credentials.json', 'w') as f:
+    with open('credentials.json', 'w') as f:
         f.write(os.environ.get('G_CREDENTIALS'))
 
 if 'G_TOKEN' in os.environ:
-    with open('../../alistirmalar/tkn.json', 'w') as f:
+    with open('tkn.json', 'w') as f:
         f.write(os.environ.get('G_TOKEN'))
 
 dp_name = 'manyak.db'
