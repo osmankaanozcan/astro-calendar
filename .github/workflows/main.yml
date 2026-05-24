@@ -23,8 +23,11 @@ jobs:
 
     - name: Kütüphaneleri Yükle
       run: pip install -r test.txt
-
     - name: Kodu çalıştır
+    
+      env:
+        G_CREDENTIALS: ${{ secrets.CREDENTIALS_JSON }}
+        G_TOKEN: ${{ secrets.TKN_JSON }}
       run: python veriler.py
     - name: Geri döndür (manyak.db) Depoya Geri Yükle (Auto-Commit)
       run: |
