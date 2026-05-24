@@ -51,15 +51,15 @@ def zaman_ayari(utc_ayari):
 
 def google_baglan():
     creds = None
-    if os.path.exists('../../alistirmalar/tkn.json'):
-        creds = Credentials.from_authorized_user_file('../../alistirmalar/tkn.json', auth)
+    if os.path.exists('tkn.json'):
+        creds = Credentials.from_authorized_user_file('tkn.json', auth)
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file('../../alistirmalar/credentials.json', auth)
+            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', auth)
             creds = flow.run_local_server(port=0)
-        with open('../../alistirmalar/tkn.json', 'w') as token:
+        with open('tkn.json', 'w') as token:
             token.write(creds.to_json())
     return build('calendar', 'v3', credentials=creds)
 
