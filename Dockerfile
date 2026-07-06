@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install --no-cache-dir -r text_f.txt
+RUN pip install --no-cache-dir -r req.txt
 
 EXPOSE 8501
 
