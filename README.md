@@ -26,7 +26,7 @@ Projeyi kendi bilgisayarınızda çalıştırmak için:
 1. Bu repoyu klonlayın:
    ```bash
    
-   Bu repoyu klonlayın ---> https://github.com/osmankaanozcan/astro-calendar.git
+   Bu repoyu klonlayın ---> git clone https://github.com/osmankaanozcan/astro-calendar.git
    
    proje klasörüne girin ---> cd astro-calendar
 
