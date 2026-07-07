@@ -31,5 +31,4 @@ Projeyi kendi bilgisayarınızda çalıştırmak için:
    proje klasörüne girin ---> cd astro-calendar
 
    Gerekli paketleri/bağımlılıkları yükleyin ---> pip install -r req.txt
-   
-   Projeyi lokalinizde (kendi bilgisayarınızda) başlatın ---> streamlit run visual.py
+
