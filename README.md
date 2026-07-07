@@ -8,7 +8,7 @@ Astro-Calendar, dünya genelindeki aktif uzay ajanslarının (NASA, SpaceX, ESA,
 
 
 * **Veri Katmanı (`veriler.py`):** The Space Devs API'sinden fırlatma verilerini çeker,  zaman dilimlerini (İstanbul/Europe) ve eksik verileri temizler , yerel bir SQLite veritabanına yazar.
-* **Arayüz Katmanı (`visual.py`):** Kullanıcıların Google hesaplarıyla güvenli bir şekilde OAuth 2.0 protokolü üzerinden bağlanmasını ve verileri kendi takvimlerine tek tıkla senkronize etmesini sağlayan **Streamlit** arayüzü.
+* **Arayüz Katmanı (`visual.py`):** Kullanıcıların Google hesaplarıyla güvenli bir şekilde OAuth 2.0 protokolü üzerinden bağlanmasını ve verileri kendi takvimlerine tek tıkla senkronize etmesini sağlayan **Streamlit** arayüzü. ( veriler.py ile veri senkronizasyonu henüz kurulmamıştır )
 
 ---
 
